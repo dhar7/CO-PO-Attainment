@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Column Form Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00B050; /* Green background */
+            color: white;
+            text-align: left;
+            padding: 20px 200px;
+            
+        }
+
+        .logo-container {
+            float: left;
+            padding-left: 20px;
+        }
+
+        .logo {
+            width: 100px; /* Adjust the width as needed */
+            height: 100px; /* Adjust the height as needed */
+            /* Add any styles you want for the image */
+        }
+
+        .container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"],
+        .form-container input[type="button"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .form-container input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="KUET Logo" class="logo">
+        </div>
+        <div>
+            <h1>Department of Computer Science and Engineering</h1>
+      <h2>Khulna University of Engineering & Technology</h2>
+        </div>
+    </header>
+    <div class="container">
+        <div class="column">
+            <div class="form-container">
+                <h2>CT</h2>
+                <form action="gen_ct.php" method="post">
+                    <!-- Add your CT form fields here if needed -->
+                    <input type="submit" name="create_csv" value="Create CSV File">
+                    
+                </form>
+            </div>
+        </div>
+        <div class="column">
+            <div class="form-container">
+                <h2>Assignment</h2>
+                <form action="gen_assignment.php" method="post">
+                    <!-- Add your Assignment form fields here if needed -->
+                    <input type="submit" name="create_csv" value="Create CSV File">
+                    
+                </form>
+            </div>
+        </div>
+        <div class="column">
+            <div class="form-container">
+                <h2>Final Exam</h2>
+                <form action="gen_final.php" method="post">
+                    <!-- Add your Final Exam form fields here if needed -->
+                    <input type="submit" name="create_csv" value="Create CSV File">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form for "Generate result" -->
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <div class="form-container" style="max-width: 400px;">
+            
+            <form action="calculate_ct.php" method="post">
+                <h2> Set Threshold </h2>
+                <input
+                type="text"
+                
+                id="th"
+                name="th"
+                value = "50"
+                />
+                <h3> <center> Generate Result </center> </h3>
+                <!-- Add your "Generate result" form fields here if needed -->
+                <input type="submit" name="generate_result" value="Generate Result">
+            </form>
+        </div>
+    </div>
+
+    <!--<script>
+        function createCSV() {
+            // Replace this function with your code to create a CSV file based on the form data.
+            alert("Create CSV File button clicked!");
+        }
+
+        function uploadCSV() {
+            // Replace this function with your code to handle the CSV file upload.
+            alert("Upload CSV File button clicked!");
+        }
+    </script> -->
+</body>
+
+</html>

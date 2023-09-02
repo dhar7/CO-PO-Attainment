@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      height: 20vh;
+      background-color: #00B050; /* Green background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+    }
+    .logo-container {
+      padding: 10px;
+    }
+    .logo {
+      max-width: 100px; /* Limit the logo width */
+      height: auto; /* Maintain aspect ratio */
+      /* Add any styles you want for the image */
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="KUET Logo" class="logo">
+    </div>
+    <div>
+      <div><h1>Department of Computer Science and Engineering</h1></div>
+      <div>Khulna University of Engineering & Technology</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h1>Registration Form</h1>
+        </div>
+        <div class="panel-body">
+          <form action="initialize.php" method="post">
+            <div class="form-group">
+              <label for="courseName">Course Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="courseName"
+                name="courseName"
+              />
+            </div>
+            <div class="form-group">
+              <label for="courseCode">Course Code:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="courseCode"
+                name="courseCode"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="batch">Batch:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="batch"
+                name="batch"
+              />
+            </div>
+
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary" value="Initialize" />
+            </div>
+          </form>
+          <br>
+          <form action="generate.php" method="post">
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary" value="Generate Result" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
